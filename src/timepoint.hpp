@@ -8,6 +8,14 @@ private:
 	std::tm time_object;
 
 public:
+	//constructors
+	Timepoint()
+	{
+		std::time_t now = std::time(nullptr);
+		time_object = *std::localtime(&now);
+	}
+	Timepoint(const Timepoint& t): time_object(t.time_object) {}
+
 	//getters
 	int getSecond();
 	int getMinute();

@@ -23,6 +23,11 @@ private:
 	Text entryText_;
 
 public:
+	//constructors
+	Entry(const Entry& e): dateLastUpdate_(e.dateLastUpdate_), category_(e.category_), keywords_(e.keywords_), referencePaths_(e.referencePaths_), entryTitle_(e.entryTitle_), entryText_(e.entryText_) {}
+	Entry() {}
+	Entry(Text title, Text text, Category category): entryTitle_(title), entryText_(text), category_(category), dateLastUpdate_() {}
+
 	//getters
 	Timepoint getDateLastUpdate();
 	Category getCategory();
